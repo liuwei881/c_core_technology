@@ -1,6 +1,12 @@
 #include <stdio.h>
+#include <stdbool.h>
 
-int main() {
-    printf("Hello, World!\n");
-    return 0;
+_Bool isReadWriteable(const char *filename){
+    FILE* fp = fopen("./filename", "r+");
+    if(fp != NULL){
+        fclose(fp);
+        return true;
+    }else{
+        return false;
+    }
 }
